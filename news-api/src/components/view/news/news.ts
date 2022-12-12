@@ -1,13 +1,13 @@
 import './news.css';
-import { Data } from '../../../types/types';
+import { NewsData } from '../../../types/types';
 class News {
-    draw(data: Data[]) {
-        const news = data.length >= 10 ? data.filter((_item: Data, idx: number) => idx < 10) : data;
+    draw(data: NewsData[]) {
+        const news = data.length >= 10 ? data.filter((_item: NewsData, idx: number) => idx < 10) : data;
 
         const fragment = document.createDocumentFragment();
         const newsItemTemp = document.querySelector('#newsItemTemp') as HTMLTemplateElement;
 
-        news.forEach((item: Data, idx: number) => {
+        news.forEach((item: NewsData, idx: number) => {
             const newsClone = newsItemTemp.content.cloneNode(true) as HTMLTemplateElement;
             const newsItem = newsClone.querySelector('.news__item') as HTMLTemplateElement;
             if (idx % 2) newsItem.classList.add('alt');
