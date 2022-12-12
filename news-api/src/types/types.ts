@@ -1,3 +1,6 @@
+import News from "../components/view/news/news";
+import Sources from '../components/view/sources/sources'
+
 type NewsData = {
     author: string;
     content: string;
@@ -24,4 +27,23 @@ type Source = {
     name: string;
 };
 
-export { NewsData, Source, SourcesData };
+type drawNewsData = {
+    status: string;
+    totalResults: number;
+    articles: Array<NewsData>;
+}
+
+type drawSourcesData = {
+  status: string;
+  sources: Array<SourcesData>;
+}
+
+interface IAppView {
+  news: News;
+  sources: Sources;
+  drawNews(data:drawNewsData):void
+  drawSources(data:drawSourcesData):void
+}
+
+export { NewsData, Source, SourcesData,
+  drawNewsData, drawSourcesData, IAppView };
