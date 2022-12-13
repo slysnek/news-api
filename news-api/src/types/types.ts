@@ -27,13 +27,13 @@ type Source = {
     name: string;
 };
 
-type drawNewsData = {
+type drawNewsData = void | {
     status: string;
     totalResults: number;
     articles: Array<NewsData>;
 };
 
-type drawSourcesData = {
+type drawSourcesData = void | {
     status: string;
     sources: Array<SourcesData>;
 };
@@ -58,9 +58,11 @@ interface IGetResponse {
     options?: ResponseOptions;
 }
 
-type ResponseOptions = undefined | {
-    sources: string | number | null| undefined;
-};
+type ResponseOptions =
+    | undefined
+    | {
+          sources: string | number | null | undefined;
+      };
 
 interface IAppView {
     news: News;
