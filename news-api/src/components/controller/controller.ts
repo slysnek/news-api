@@ -2,7 +2,7 @@ import { LoadComeback } from '../../types/types';
 import AppLoader from './appLoader';
 
 class AppController extends AppLoader {
-    getSources(callback: LoadComeback) {
+    getSources(callback: LoadComeback<void>) {
         super.getResp(
             {
                 endpoint: 'sources',
@@ -11,7 +11,7 @@ class AppController extends AppLoader {
         );
     }
 
-    getNews(e: Event, callback: LoadComeback) {
+    getNews(e: Event, callback: LoadComeback<void>) {
         let target = e.target as Element;
         const newsContainer = e.currentTarget as HTMLTemplateElement;
 

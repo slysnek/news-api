@@ -71,7 +71,7 @@ interface IAppView {
     drawSources(data: drawSourcesData): void;
 }
 
-type LoadComeback = (smth: void) => void;
+type LoadComeback<T> = (smth: T) => void;
 
 export {
     NewsData,
