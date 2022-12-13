@@ -1,16 +1,26 @@
+@font-face {
+    font-family: Robinson Press;
+    src: url('./assets/fonts/RobinsonPress.woff');
+}
+
 body {
     color: #fff;
     background: #17181c;
-    font-family: sans-serif;
+    font-family: Robinson Press;
 }
 
 header {
+    text-align: center;
     padding: 10px 30px;
 }
 
 header h1 {
-    font-size: 40px;
-    font-weight: 800;
+    font-size: 60px;
+    font-weight: 300;
+}
+
+header p{
+    font-size: 24px;
 }
 
 footer {

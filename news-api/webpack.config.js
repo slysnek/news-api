@@ -3,12 +3,17 @@ const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const EslingPlugin = require('eslint-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const baseConfig = {
     entry: path.resolve(__dirname, './src/index'),
     mode: 'development',
     module: {
         rules: [
+            {
+                test: /\.(eot|woff|woff2|svg|ttf)([\?]?.*)$/,
+                type: 'asset/resource',
+              },
             { test: /\.ts$/i, use: 'ts-loader' },
             {
                 test: /\.css$/i,
@@ -29,7 +34,10 @@ const baseConfig = {
             filename: 'index.html',
         }),
         new CleanWebpackPlugin(),
-        new EslingPlugin({ extensions: 'ts' })
+        new EslingPlugin({ extensions: 'ts' }),
+        new MiniCssExtractPlugin({
+            filename: 'style.[contenthash].css'
+        })
     ],
 };
 
