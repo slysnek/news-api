@@ -55,11 +55,11 @@ interface IResponse {
 
 interface IGetResponse {
     endpoint: string;
-    options: ResponseOptions;
+    options?: ResponseOptions;
 }
 
-type ResponseOptions = {
-    sources: string | number | null | undefined;
+type ResponseOptions = undefined | {
+    sources: string | number | null| undefined;
 };
 
 interface IAppView {
