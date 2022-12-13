@@ -12,7 +12,10 @@ class News {
             const newsItem = newsClone.querySelector('.news__item') as HTMLTemplateElement;
             if (idx % 2) newsItem.classList.add('alt');
             const metaPhoto = newsClone.querySelector('.news__meta-photo') as HTMLTemplateElement;
-            metaPhoto.style.backgroundImage = `url(${item.urlToImage || 'img/news_placeholder.jpg'})`;
+            metaPhoto.style.backgroundImage = `url(${
+                item.urlToImage ||
+                'https://avatars.mds.yandex.net/i?id=bafc57bf9e3add5350fdd2f782c17859ab2dc98b-4216502-images-thumbs&n=13'
+            })`;
             const metaAuthor = newsClone.querySelector('.news__meta-author') as HTMLTemplateElement;
             metaAuthor.textContent = item.author || item.source.name;
 

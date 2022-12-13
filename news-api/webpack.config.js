@@ -14,6 +14,10 @@ const baseConfig = {
                 test: /\.(eot|woff|woff2|svg|ttf)([\?]?.*)$/,
                 type: 'asset/resource',
               },
+              {
+                test: /\.(jpe?g|png|webp|gif|svg|ico)$/i,
+                type: 'asset/resource',
+              },
             { test: /\.ts$/i, use: 'ts-loader' },
             {
                 test: /\.css$/i,
