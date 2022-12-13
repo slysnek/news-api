@@ -1,5 +1,5 @@
-import News from "../components/view/news/news";
-import Sources from '../components/view/sources/sources'
+import News from '../components/view/news/news';
+import Sources from '../components/view/sources/sources';
 
 type NewsData = {
     author: string;
@@ -31,19 +31,56 @@ type drawNewsData = {
     status: string;
     totalResults: number;
     articles: Array<NewsData>;
-}
+};
 
 type drawSourcesData = {
-  status: string;
-  sources: Array<SourcesData>;
+    status: string;
+    sources: Array<SourcesData>;
+};
+
+type Options = {
+    apiKey: string;
+};
+
+interface IResponse {
+    //body?: string;
+    bodyUsed: boolean;
+    headers: Headers;
+    ok: boolean;
+    redirected: boolean;
+    status: number;
+    statusText: string;
+    json: () => void;
 }
+
+interface IGetResponse {
+    endpoint: string;
+    options: ResponseOptions;
+}
+
+type ResponseOptions = {
+    sources: string | number | null | undefined;
+};
 
 interface IAppView {
-  news: News;
-  sources: Sources;
-  drawNews(data:drawNewsData):void
-  drawSources(data:drawSourcesData):void
+    news: News;
+    sources: Sources;
+    drawNews(data: drawNewsData): void;
+    drawSources(data: drawSourcesData): void;
 }
 
-export { NewsData, Source, SourcesData,
-  drawNewsData, drawSourcesData, IAppView };
+type LoadComeback = (smth: void) => void;
+
+export {
+    NewsData,
+    Source,
+    SourcesData,
+    drawNewsData,
+    drawSourcesData,
+    Options,
+    IAppView,
+    ResponseOptions,
+    IResponse,
+    IGetResponse,
+    LoadComeback,
+};
