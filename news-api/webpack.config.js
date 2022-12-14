@@ -17,6 +17,9 @@ const baseConfig = {
               {
                 test: /\.(jpe?g|png|webp|gif|svg|ico)$/i,
                 type: 'asset/resource',
+                use: [{
+                    loader: 'file-loader'
+                }]
               },
             { test: /\.ts$/i, use: 'ts-loader' },
             {
@@ -30,12 +33,13 @@ const baseConfig = {
     },
     output: {
         filename: 'index.js',
-        path: path.resolve(__dirname, '../dist'),
+        path: path.resolve(__dirname, './dist'),
     },
     plugins: [
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, './src/index.html'),
             filename: 'index.html',
+            favicon: "./src/assets/ico/favicon.ico"
         }),
         new CleanWebpackPlugin(),
         new EslingPlugin({ extensions: 'ts' }),
