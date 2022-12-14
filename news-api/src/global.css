@@ -32,7 +32,6 @@ header p{
     gap: 20px;
     font-size: 1.5em;
     padding: 0;
-    cursor: pointer;
 }
 
 .characters:hover{
@@ -40,6 +39,7 @@ header p{
     text-shadow: -2px -3px 2.1px grey, 0px -2px 1px grey, -2px 0px 0 grey, -1px 1px 0 grey;
     box-shadow: 0 0.5em 0.5em -0.4em whitesmoke;
     transform: translateY(-0.25em);
+    cursor: pointer;
 }
 
 footer {

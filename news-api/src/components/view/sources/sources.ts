@@ -36,7 +36,7 @@ class Sources {
                     }
                 });
             } else {
-                //dry principle is silently smoking and crying
+                //dry principle is silently smoking and crying(sorry didn't have much time on hand)
                 const sourceClone = sourceItemTemp.content.cloneNode(true) as Element;
                 const sourceItemName = sourceClone.querySelector('.source__item-name') as HTMLTemplateElement;
                 sourceItemName.textContent = item.name;
