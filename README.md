@@ -1,2 +1,1 @@
-# slysnek-JSFE2022Q3
-Private repository for @slysnek
+A project designed to test news API
